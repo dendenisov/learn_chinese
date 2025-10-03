@@ -755,10 +755,60 @@ select.form-control {
   margin: 0;
 }
 
+.header-actions {
+  flex-shrink: 0;
+}
+
 #theme-toggle {
   font-size: var(--font-size-lg);
   padding: var(--space-8);
   min-width: 40px;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+  border-radius: var(--radius-base);
+  padding: var(--space-12) var(--space-16);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  transition: all var(--duration-normal) var(--ease-standard);
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.notification.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.notification-close:hover {
+  opacity: 0.8;
 }
 
 /* Navigation */
@@ -1285,6 +1335,16 @@ select.form-control {
   flex-wrap: wrap;
 }
 
+.delete-btn {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.delete-btn:hover {
+  background-color: var(--color-error);
+  color: white;
+}
+
 /* Collections checkboxes */
 .collections-checkboxes {
   display: grid;
@@ -1456,6 +1516,7 @@ select.form-control {
   padding: var(--space-16) var(--space-20);
   border-bottom: 1px solid var(--color-border);
   transition: background-color var(--duration-fast) var(--ease-standard);
+  cursor: pointer;
 }
 
 .character-item:hover {
@@ -1644,6 +1705,10 @@ select.form-control {
     font-size: var(--font-size-lg);
   }
 
+  .header-actions {
+    gap: var(--space-4);
+  }
+
   .nav-buttons {
     justify-content: flex-start;
     overflow-x: auto;
@@ -1726,5 +1791,20 @@ select.form-control {
   .collection-manage-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    transform: translateY(-100%);
+  }
+
+  .notification.show {
+    transform: translateY(0);
+  }
+
+  .notification.hidden {
+    transform: translateY(-100%);
   }
 }

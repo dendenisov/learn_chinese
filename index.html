@@ -12,11 +12,25 @@
         <header class="header">
             <div class="container flex justify-between items-center">
                 <h1 class="app-title">汉字学习 - Изучение китайских иероглифов</h1>
-                <button id="theme-toggle" class="btn btn--secondary btn--sm">
-                    <span id="theme-icon">🌙</span>
-                </button>
+                <div class="header-actions flex items-center gap-8">
+                    <input type="file" id="json-file-input" accept=".json" class="hidden">
+                    <button id="load-json-btn" class="btn btn--outline btn--sm">
+                        📥 Загрузить JSON
+                    </button>
+                    <button id="theme-toggle" class="btn btn--secondary btn--sm">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </div>
             </div>
         </header>
+
+        <!-- Notification -->
+        <div id="notification" class="notification hidden">
+            <div class="notification-content">
+                <span id="notification-text">Данные сохранены</span>
+                <button id="notification-close" class="notification-close">×</button>
+            </div>
+        </div>
 
         <!-- Main Navigation -->
         <nav id="main-nav" class="main-nav">
@@ -167,9 +181,7 @@
                 <div class="manage-header">
                     <h2>Управление</h2>
                     <div class="manage-actions">
-                        <button id="export-data-btn" class="btn btn--outline">📤 Экспорт</button>
-                        <input type="file" id="import-file" accept=".json" class="hidden">
-                        <button id="import-data-btn" class="btn btn--outline">📥 Импорт</button>
+                        <button id="download-json-btn" class="btn btn--primary">💾 Скачать JSON</button>
                     </div>
                 </div>
 
@@ -221,6 +233,7 @@
                             <div class="form-actions">
                                 <button type="submit" class="btn btn--primary">Сохранить</button>
                                 <button type="button" id="cancel-character-form" class="btn btn--outline">Отмена</button>
+                                <button type="button" id="delete-character-btn" class="btn btn--outline delete-btn hidden">Удалить</button>
                             </div>
                         </form>
                     </div>
