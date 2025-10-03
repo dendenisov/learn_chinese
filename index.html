@@ -25,7 +25,6 @@
                     <button class="nav-btn active" data-section="study">Изучение</button>
                     <button class="nav-btn" data-section="quiz">Тестирование</button>
                     <button class="nav-btn" data-section="manage">Управление</button>
-                    <button class="nav-btn" data-section="collections">Коллекции</button>
                     <button class="nav-btn" data-section="search">Поиск</button>
                 </div>
             </div>
@@ -34,25 +33,22 @@
         <!-- Study Section -->
         <section id="study-section" class="section active">
             <div class="container">
-                <div class="study-controls">
-                    <div class="collection-selector">
-                        <label for="study-collection">Коллекция:</label>
-                        <select id="study-collection" class="form-control">
-                            <option value="">Выберите коллекцию</option>
-                        </select>
-                    </div>
+                <div class="study-header">
+                    <h2>Выберите коллекцию для изучения</h2>
                     <div class="study-options flex gap-8">
                         <button id="shuffle-btn" class="btn btn--outline btn--sm">🔀 Перемешать</button>
                         <button id="reset-study" class="btn btn--outline btn--sm">↺ Сбросить</button>
                     </div>
                 </div>
 
-                <div id="flashcard-container" class="flashcard-container">
-                    <div id="no-collection" class="no-content">
-                        <p>Выберите коллекцию для начала изучения</p>
-                    </div>
-                    
-                    <div id="flashcard" class="flashcard hidden">
+                <!-- Collections Grid -->
+                <div id="collections-grid" class="collections-grid">
+                    <!-- Collections will be populated by JavaScript -->
+                </div>
+
+                <!-- Flashcard Container -->
+                <div id="flashcard-container" class="flashcard-container hidden">
+                    <div id="flashcard" class="flashcard">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <div class="character" id="card-character">汉</div>
@@ -78,6 +74,10 @@
                             <button id="show-answer" class="btn btn--primary">Показать ответ</button>
                             <button id="next-card" class="btn btn--outline">Следующая →</button>
                         </div>
+                        
+                        <div class="study-navigation">
+                            <button id="back-to-collections" class="btn btn--outline btn--sm">← Назад к коллекциям</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,29 +86,25 @@
         <!-- Quiz Section -->
         <section id="quiz-section" class="section">
             <div class="container">
-                <div class="quiz-controls">
-                    <div class="collection-selector">
-                        <label for="quiz-collection">Коллекция:</label>
-                        <select id="quiz-collection" class="form-control">
-                            <option value="">Выберите коллекцию</option>
-                        </select>
-                    </div>
+                <div class="quiz-header">
+                    <h2>Выберите коллекцию для тестирования</h2>
                     <div class="quiz-options flex gap-8">
                         <select id="quiz-mode" class="form-control">
                             <option value="meaning">Перевод</option>
                             <option value="pinyin">Пиньинь</option>
                             <option value="palladius">Палладица</option>
                         </select>
-                        <button id="start-quiz" class="btn btn--primary">Начать тест</button>
                     </div>
                 </div>
 
-                <div id="quiz-container" class="quiz-container">
-                    <div id="no-quiz" class="no-content">
-                        <p>Выберите коллекцию и нажмите "Начать тест"</p>
-                    </div>
+                <!-- Quiz Collections Grid -->
+                <div id="quiz-collections-grid" class="collections-grid">
+                    <!-- Collections will be populated by JavaScript -->
+                </div>
 
-                    <div id="quiz-question" class="quiz-question hidden">
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="quiz-container hidden">
+                    <div id="quiz-question" class="quiz-question">
                         <div class="quiz-progress">
                             <span id="quiz-current">1</span> / <span id="quiz-total">10</span>
                             <div class="quiz-score">
@@ -134,6 +130,10 @@
                             <div class="correct-answer" id="correct-answer-display"></div>
                             <button id="next-question" class="btn btn--primary">Следующий вопрос</button>
                         </div>
+                        
+                        <div class="quiz-navigation">
+                            <button id="back-to-quiz-collections" class="btn btn--outline btn--sm">← Назад к коллекциям</button>
+                        </div>
                     </div>
 
                     <div id="quiz-results" class="quiz-results hidden">
@@ -152,7 +152,10 @@
                                 <span class="result-value" id="final-percentage">0%</span>
                             </div>
                         </div>
-                        <button id="restart-quiz" class="btn btn--primary">Пройти ещё раз</button>
+                        <div class="quiz-result-actions">
+                            <button id="restart-quiz" class="btn btn--primary">Пройти ещё раз</button>
+                            <button id="back-to-quiz-collections-results" class="btn btn--outline">← Назад к коллекциям</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,69 +165,122 @@
         <section id="manage-section" class="section">
             <div class="container">
                 <div class="manage-header">
-                    <h2>Управление карточками</h2>
+                    <h2>Управление</h2>
                     <div class="manage-actions">
-                        <button id="add-character-btn" class="btn btn--primary">+ Добавить иероглиф</button>
                         <button id="export-data-btn" class="btn btn--outline">📤 Экспорт</button>
                         <input type="file" id="import-file" accept=".json" class="hidden">
                         <button id="import-data-btn" class="btn btn--outline">📥 Импорт</button>
                     </div>
                 </div>
 
-                <!-- Add/Edit Form -->
-                <div id="character-form" class="character-form hidden">
-                    <h3 id="form-title">Добавить новый иероглиф</h3>
-                    <form id="character-form-element">
-                        <div class="form-group">
-                            <label class="form-label">Иероглиф *</label>
-                            <input type="text" id="form-character" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Пиньинь *</label>
-                            <input type="text" id="form-pinyin" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Палладица *</label>
-                            <input type="text" id="form-palladius" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Перевод *</label>
-                            <input type="text" id="form-meaning" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Примеры (каждый с новой строки)</label>
-                            <textarea id="form-examples" class="form-control" rows="3" placeholder="例句1&#10;例句2"></textarea>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn--primary">Сохранить</button>
-                            <button type="button" id="cancel-form" class="btn btn--outline">Отмена</button>
-                        </div>
-                    </form>
+                <!-- Management Tabs -->
+                <div class="manage-tabs">
+                    <button class="manage-tab active" data-tab="characters">Карточки</button>
+                    <button class="manage-tab" data-tab="collections">Коллекции</button>
                 </div>
 
-                <!-- Characters List -->
-                <div id="characters-list" class="characters-list">
-                    <div class="list-header">
-                        <input type="text" id="manage-search" class="form-control" placeholder="Поиск по иероглифам...">
+                <!-- Characters Tab -->
+                <div id="characters-tab" class="manage-tab-content active">
+                    <div class="tab-header">
+                        <h3>Управление карточками</h3>
+                        <button id="add-character-btn" class="btn btn--primary">+ Добавить иероглиф</button>
                     </div>
-                    <div id="characters-grid" class="characters-grid">
-                        <!-- Characters will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Collections Section -->
-        <section id="collections-section" class="section">
-            <div class="container">
-                <h2>Коллекции</h2>
-                <div class="collections-tabs">
-                    <button class="collection-tab active" data-type="hsk">HSK 1</button>
-                    <button class="collection-tab" data-type="radicals">Ключи Kangxi</button>
+                    <!-- Add/Edit Character Form -->
+                    <div id="character-form" class="character-form hidden">
+                        <h3 id="character-form-title">Добавить новый иероглиф</h3>
+                        <form id="character-form-element">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Иероглиф *</label>
+                                    <input type="text" id="form-character" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Пиньинь *</label>
+                                    <input type="text" id="form-pinyin" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Палладица *</label>
+                                    <input type="text" id="form-palladius" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Перевод *</label>
+                                <input type="text" id="form-meaning" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Примеры (каждый с новой строки)</label>
+                                <textarea id="form-examples" class="form-control" rows="3" placeholder="例句1&#10;例句2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Добавить в коллекции</label>
+                                <div id="collections-checkboxes" class="collections-checkboxes">
+                                    <!-- Collections checkboxes will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary">Сохранить</button>
+                                <button type="button" id="cancel-character-form" class="btn btn--outline">Отмена</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Characters List -->
+                    <div id="characters-list" class="characters-list">
+                        <div class="list-header">
+                            <input type="text" id="manage-search" class="form-control" placeholder="Поиск по иероглифам...">
+                        </div>
+                        <div id="characters-grid" class="characters-manage-grid">
+                            <!-- Characters will be populated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
-                
-                <div id="collections-list" class="collections-list">
-                    <!-- Collections will be populated by JavaScript -->
+
+                <!-- Collections Tab -->
+                <div id="collections-tab" class="manage-tab-content">
+                    <div class="tab-header">
+                        <h3>Управление коллекциями</h3>
+                        <button id="add-collection-btn" class="btn btn--primary">+ Создать коллекцию</button>
+                    </div>
+
+                    <!-- Add/Edit Collection Form -->
+                    <div id="collection-form" class="collection-form hidden">
+                        <h3 id="collection-form-title">Создать новую коллекцию</h3>
+                        <form id="collection-form-element">
+                            <div class="form-group">
+                                <label class="form-label">Название коллекции *</label>
+                                <input type="text" id="form-collection-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Описание</label>
+                                <textarea id="form-collection-description" class="form-control" rows="2" placeholder="Краткое описание коллекции"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Выберите иероглифы для коллекции</label>
+                                <div class="characters-selection">
+                                    <input type="text" id="characters-search" class="form-control" placeholder="Поиск иероглифов для добавления...">
+                                    <div id="available-characters" class="available-characters">
+                                        <!-- Available characters will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="selected-characters-display" class="selected-characters-display">
+                                <h4>Выбранные иероглифы (<span id="selected-count">0</span>):</h4>
+                                <div id="selected-characters-list" class="selected-characters-list">
+                                    <!-- Selected characters will be displayed here -->
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary">Сохранить коллекцию</button>
+                                <button type="button" id="cancel-collection-form" class="btn btn--outline">Отмена</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Collections List -->
+                    <div id="collections-manage-list" class="collections-manage-list">
+                        <!-- Collections will be populated by JavaScript -->
+                    </div>
                 </div>
             </div>
         </section>
