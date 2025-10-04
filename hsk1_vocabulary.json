@@ -1,0 +1,930 @@
+{
+  "numbers": [
+    {
+      "character": "一",
+      "pinyin": "yī",
+      "palladius": "и",
+      "translation": "один"
+    },
+    {
+      "character": "二",
+      "pinyin": "èr",
+      "palladius": "эр",
+      "translation": "два"
+    },
+    {
+      "character": "三",
+      "pinyin": "sān",
+      "palladius": "сань",
+      "translation": "три"
+    },
+    {
+      "character": "四",
+      "pinyin": "sì",
+      "palladius": "сы",
+      "translation": "четыре"
+    },
+    {
+      "character": "五",
+      "pinyin": "wǔ",
+      "palladius": "у",
+      "translation": "пять"
+    },
+    {
+      "character": "六",
+      "pinyin": "liù",
+      "palladius": "лю",
+      "translation": "шесть"
+    },
+    {
+      "character": "七",
+      "pinyin": "qī",
+      "palladius": "ци",
+      "translation": "семь"
+    },
+    {
+      "character": "八",
+      "pinyin": "bā",
+      "palladius": "ба",
+      "translation": "восемь"
+    },
+    {
+      "character": "九",
+      "pinyin": "jiǔ",
+      "palladius": "цзю",
+      "translation": "девять"
+    },
+    {
+      "character": "十",
+      "pinyin": "shí",
+      "palladius": "ши",
+      "translation": "десять"
+    },
+    {
+      "character": "号",
+      "pinyin": "hào",
+      "palladius": "хао",
+      "translation": "номер, число"
+    }
+  ],
+  "pronouns": [
+    {
+      "character": "我",
+      "pinyin": "wǒ",
+      "palladius": "во",
+      "translation": "я"
+    },
+    {
+      "character": "我们",
+      "pinyin": "wǒmen",
+      "palladius": "вомэнь",
+      "translation": "мы"
+    },
+    {
+      "character": "你",
+      "pinyin": "nǐ",
+      "palladius": "ни",
+      "translation": "ты"
+    },
+    {
+      "character": "他",
+      "pinyin": "tā",
+      "palladius": "та",
+      "translation": "он"
+    },
+    {
+      "character": "她",
+      "pinyin": "tā",
+      "palladius": "та",
+      "translation": "она"
+    },
+    {
+      "character": "这",
+      "pinyin": "zhè",
+      "palladius": "чжэ",
+      "translation": "это/этот"
+    },
+    {
+      "character": "那",
+      "pinyin": "nà",
+      "palladius": "на",
+      "translation": "то/тот"
+    },
+    {
+      "character": "哪",
+      "pinyin": "nǎ",
+      "palladius": "на",
+      "translation": "какой"
+    },
+    {
+      "character": "哪儿",
+      "pinyin": "nǎr",
+      "palladius": "нар",
+      "translation": "где"
+    },
+    {
+      "character": "谁",
+      "pinyin": "shéi",
+      "palladius": "шэй",
+      "translation": "кто"
+    },
+    {
+      "character": "什么",
+      "pinyin": "shénme",
+      "palladius": "шэньмэ",
+      "translation": "что"
+    },
+    {
+      "character": "多少",
+      "pinyin": "duōshǎo",
+      "palladius": "доши",
+      "translation": "сколько"
+    },
+    {
+      "character": "几",
+      "pinyin": "jǐ",
+      "palladius": "цзи",
+      "translation": "сколько (немного)"
+    },
+    {
+      "character": "怎么",
+      "pinyin": "zěnme",
+      "palladius": "цзэньмэ",
+      "translation": "как"
+    },
+    {
+      "character": "怎么样",
+      "pinyin": "zěnmeyàng",
+      "palladius": "цзэньмэян",
+      "translation": "как дела"
+    }
+  ],
+  "family": [
+    {
+      "character": "爸爸",
+      "pinyin": "bàba",
+      "palladius": "баба",
+      "translation": "папа"
+    },
+    {
+      "character": "妈妈",
+      "pinyin": "māma",
+      "palladius": "мама",
+      "translation": "мама"
+    },
+    {
+      "character": "儿子",
+      "pinyin": "érzi",
+      "palladius": "эрцзы",
+      "translation": "сын"
+    },
+    {
+      "character": "女儿",
+      "pinyin": "nǚ'ér",
+      "palladius": "нюйэр",
+      "translation": "дочь"
+    },
+    {
+      "character": "朋友",
+      "pinyin": "péngyou",
+      "palladius": "пэнъю",
+      "translation": "друг"
+    }
+  ],
+  "time": [
+    {
+      "character": "今天",
+      "pinyin": "jīntiān",
+      "palladius": "цзиньтянь",
+      "translation": "сегодня"
+    },
+    {
+      "character": "明天",
+      "pinyin": "míngtiān",
+      "palladius": "минтянь",
+      "translation": "завтра"
+    },
+    {
+      "character": "昨天",
+      "pinyin": "zuótiān",
+      "palladius": "цзотянь",
+      "translation": "вчера"
+    },
+    {
+      "character": "现在",
+      "pinyin": "xiànzài",
+      "palladius": "сяньцзай",
+      "translation": "сейчас"
+    },
+    {
+      "character": "时候",
+      "pinyin": "shíhou",
+      "palladius": "шихоу",
+      "translation": "время"
+    },
+    {
+      "character": "上午",
+      "pinyin": "shàngwǔ",
+      "palladius": "шанъу",
+      "translation": "утром"
+    },
+    {
+      "character": "中午",
+      "pinyin": "zhōngwǔ",
+      "palladius": "чжунъу",
+      "translation": "в полдень"
+    },
+    {
+      "character": "下午",
+      "pinyin": "xiàwǔ",
+      "palladius": "сяу",
+      "translation": "днём"
+    },
+    {
+      "character": "年",
+      "pinyin": "nián",
+      "palladius": "нянь",
+      "translation": "год"
+    },
+    {
+      "character": "月",
+      "pinyin": "yuè",
+      "palladius": "юэ",
+      "translation": "месяц"
+    },
+    {
+      "character": "星期",
+      "pinyin": "xīngqī",
+      "palladius": "синци",
+      "translation": "неделя"
+    },
+    {
+      "character": "点",
+      "pinyin": "diǎn",
+      "palladius": "дянь",
+      "translation": "час, часов"
+    },
+    {
+      "character": "分钟",
+      "pinyin": "fēnzhōng",
+      "palladius": "фэньчжун",
+      "translation": "минута"
+    }
+  ],
+  "places": [
+    {
+      "character": "中国",
+      "pinyin": "Zhōngguó",
+      "palladius": "Чжунго",
+      "translation": "Китай"
+    },
+    {
+      "character": "北京",
+      "pinyin": "Běijīng",
+      "palladius": "Бэйцзин",
+      "translation": "Пекин"
+    },
+    {
+      "character": "家",
+      "pinyin": "jiā",
+      "palladius": "цзя",
+      "translation": "дом"
+    },
+    {
+      "character": "学校",
+      "pinyin": "xuéxiào",
+      "palladius": "сюэсяо",
+      "translation": "школа"
+    },
+    {
+      "character": "医院",
+      "pinyin": "yīyuàn",
+      "palladius": "июань",
+      "translation": "больница"
+    },
+    {
+      "character": "商店",
+      "pinyin": "shāngdiàn",
+      "palladius": "шандянь",
+      "translation": "магазин"
+    },
+    {
+      "character": "饭店",
+      "pinyin": "fàndiàn",
+      "palladius": "фаньдянь",
+      "translation": "ресторан"
+    },
+    {
+      "character": "上",
+      "pinyin": "shàng",
+      "palladius": "шан",
+      "translation": "вверх, на"
+    },
+    {
+      "character": "下",
+      "pinyin": "xià",
+      "palladius": "ся",
+      "translation": "вниз, под"
+    },
+    {
+      "character": "前面",
+      "pinyin": "qiánmiàn",
+      "palladius": "цяньмянь",
+      "translation": "впереди"
+    },
+    {
+      "character": "后面",
+      "pinyin": "hòumiàn",
+      "palladius": "хоумянь",
+      "translation": "сзади"
+    },
+    {
+      "character": "里面",
+      "pinyin": "lǐmiàn",
+      "palladius": "лимянь",
+      "translation": "внутри"
+    }
+  ],
+  "people": [
+    {
+      "character": "人",
+      "pinyin": "rén",
+      "palladius": "жэнь",
+      "translation": "человек"
+    },
+    {
+      "character": "老师",
+      "pinyin": "lǎoshī",
+      "palladius": "лаоши",
+      "translation": "учитель"
+    },
+    {
+      "character": "学生",
+      "pinyin": "xuéshēng",
+      "palladius": "сюэшэн",
+      "translation": "студент"
+    },
+    {
+      "character": "同学",
+      "pinyin": "tóngxué",
+      "palladius": "тунсюэ",
+      "translation": "одноклассник"
+    },
+    {
+      "character": "医生",
+      "pinyin": "yīshēng",
+      "palladius": "ишэн",
+      "translation": "врач"
+    },
+    {
+      "character": "先生",
+      "pinyin": "xiānsheng",
+      "palladius": "сяньшэн",
+      "translation": "господин"
+    },
+    {
+      "character": "小姐",
+      "pinyin": "xiǎojiě",
+      "palladius": "сяоцзе",
+      "translation": "мисс"
+    },
+    {
+      "character": "名字",
+      "pinyin": "míngzi",
+      "palladius": "минцзы",
+      "translation": "имя"
+    }
+  ],
+  "food_drinks": [
+    {
+      "character": "水",
+      "pinyin": "shuǐ",
+      "palladius": "шуй",
+      "translation": "вода"
+    },
+    {
+      "character": "茶",
+      "pinyin": "chá",
+      "palladius": "ча",
+      "translation": "чай"
+    },
+    {
+      "character": "米饭",
+      "pinyin": "mǐfàn",
+      "palladius": "мифань",
+      "translation": "рис"
+    },
+    {
+      "character": "菜",
+      "pinyin": "cài",
+      "palladius": "цай",
+      "translation": "блюдо, овощи"
+    },
+    {
+      "character": "水果",
+      "pinyin": "shuǐguǒ",
+      "palladius": "шуйго",
+      "translation": "фрукты"
+    },
+    {
+      "character": "苹果",
+      "pinyin": "píngguǒ",
+      "palladius": "пинго",
+      "translation": "яблоко"
+    },
+    {
+      "character": "杯子",
+      "pinyin": "bēizi",
+      "palladius": "бэйцзы",
+      "translation": "стакан"
+    }
+  ],
+  "verbs": [
+    {
+      "character": "是",
+      "pinyin": "shì",
+      "palladius": "ши",
+      "translation": "быть, являться"
+    },
+    {
+      "character": "有",
+      "pinyin": "yǒu",
+      "palladius": "ю",
+      "translation": "иметь"
+    },
+    {
+      "character": "没有",
+      "pinyin": "méiyǒu",
+      "palladius": "мэйю",
+      "translation": "не иметь"
+    },
+    {
+      "character": "看",
+      "pinyin": "kàn",
+      "palladius": "кань",
+      "translation": "смотреть"
+    },
+    {
+      "character": "看见",
+      "pinyin": "kànjiàn",
+      "palladius": "каньцзянь",
+      "translation": "видеть"
+    },
+    {
+      "character": "听",
+      "pinyin": "tīng",
+      "palladius": "тин",
+      "translation": "слушать"
+    },
+    {
+      "character": "说",
+      "pinyin": "shuō",
+      "palladius": "шо",
+      "translation": "говорить"
+    },
+    {
+      "character": "读",
+      "pinyin": "dú",
+      "palladius": "ду",
+      "translation": "читать"
+    },
+    {
+      "character": "写",
+      "pinyin": "xiě",
+      "palladius": "се",
+      "translation": "писать"
+    },
+    {
+      "character": "来",
+      "pinyin": "lái",
+      "palladius": "лай",
+      "translation": "приходить"
+    },
+    {
+      "character": "去",
+      "pinyin": "qù",
+      "palladius": "цюй",
+      "translation": "идти, уходить"
+    },
+    {
+      "character": "回",
+      "pinyin": "huí",
+      "palladius": "хуй",
+      "translation": "возвращаться"
+    },
+    {
+      "character": "吃",
+      "pinyin": "chī",
+      "palladius": "чи",
+      "translation": "есть"
+    },
+    {
+      "character": "喝",
+      "pinyin": "hē",
+      "palladius": "хэ",
+      "translation": "пить"
+    },
+    {
+      "character": "买",
+      "pinyin": "mǎi",
+      "palladius": "май",
+      "translation": "покупать"
+    },
+    {
+      "character": "做",
+      "pinyin": "zuò",
+      "palladius": "цзо",
+      "translation": "делать"
+    },
+    {
+      "character": "坐",
+      "pinyin": "zuò",
+      "palladius": "цзо",
+      "translation": "сидеть"
+    },
+    {
+      "character": "住",
+      "pinyin": "zhù",
+      "palladius": "чжу",
+      "translation": "жить"
+    },
+    {
+      "character": "学习",
+      "pinyin": "xuéxí",
+      "palladius": "сюэси",
+      "translation": "изучать"
+    },
+    {
+      "character": "工作",
+      "pinyin": "gōngzuò",
+      "palladius": "гунцзо",
+      "translation": "работать"
+    },
+    {
+      "character": "爱",
+      "pinyin": "ài",
+      "palladius": "ай",
+      "translation": "любить"
+    },
+    {
+      "character": "喜欢",
+      "pinyin": "xǐhuān",
+      "palladius": "сихуань",
+      "translation": "нравиться"
+    },
+    {
+      "character": "想",
+      "pinyin": "xiǎng",
+      "palladius": "сян",
+      "translation": "хотеть, думать"
+    },
+    {
+      "character": "认识",
+      "pinyin": "rènshi",
+      "palladius": "жэньши",
+      "translation": "знать (человека)"
+    },
+    {
+      "character": "会",
+      "pinyin": "huì",
+      "palladius": "хуй",
+      "translation": "уметь"
+    },
+    {
+      "character": "能",
+      "pinyin": "néng",
+      "palladius": "нэн",
+      "translation": "мочь"
+    },
+    {
+      "character": "叫",
+      "pinyin": "jiào",
+      "palladius": "цзяо",
+      "translation": "звать"
+    },
+    {
+      "character": "开",
+      "pinyin": "kāi",
+      "palladius": "кай",
+      "translation": "открывать"
+    },
+    {
+      "character": "睡觉",
+      "pinyin": "shuìjiào",
+      "palladius": "шуйцзяо",
+      "translation": "спать"
+    },
+    {
+      "character": "下雨",
+      "pinyin": "xiàyǔ",
+      "palladius": "сяюй",
+      "translation": "идти дождь"
+    }
+  ],
+  "adjectives": [
+    {
+      "character": "好",
+      "pinyin": "hǎo",
+      "palladius": "хао",
+      "translation": "хороший"
+    },
+    {
+      "character": "大",
+      "pinyin": "dà",
+      "palladius": "да",
+      "translation": "большой"
+    },
+    {
+      "character": "小",
+      "pinyin": "xiǎo",
+      "palladius": "сяо",
+      "translation": "маленький"
+    },
+    {
+      "character": "多",
+      "pinyin": "duō",
+      "palladius": "до",
+      "translation": "много"
+    },
+    {
+      "character": "少",
+      "pinyin": "shǎo",
+      "palladius": "шао",
+      "translation": "мало"
+    },
+    {
+      "character": "冷",
+      "pinyin": "lěng",
+      "palladius": "лэн",
+      "translation": "холодный"
+    },
+    {
+      "character": "热",
+      "pinyin": "rè",
+      "palladius": "жэ",
+      "translation": "горячий"
+    },
+    {
+      "character": "高兴",
+      "pinyin": "gāoxìng",
+      "palladius": "гаосин",
+      "translation": "весёлый"
+    },
+    {
+      "character": "漂亮",
+      "pinyin": "piàoliang",
+      "palladius": "пяолян",
+      "translation": "красивый"
+    }
+  ],
+  "objects": [
+    {
+      "character": "书",
+      "pinyin": "shū",
+      "palladius": "шу",
+      "translation": "книга"
+    },
+    {
+      "character": "桌子",
+      "pinyin": "zhuōzi",
+      "palladius": "чжоцзы",
+      "translation": "стол"
+    },
+    {
+      "character": "椅子",
+      "pinyin": "yǐzi",
+      "palladius": "ицзы",
+      "translation": "стул"
+    },
+    {
+      "character": "电脑",
+      "pinyin": "diànnǎo",
+      "palladius": "дяньнао",
+      "translation": "компьютер"
+    },
+    {
+      "character": "电视",
+      "pinyin": "diànshì",
+      "palladius": "дяньши",
+      "translation": "телевизор"
+    },
+    {
+      "character": "电影",
+      "pinyin": "diànyǐng",
+      "palladius": "дяньин",
+      "translation": "фильм"
+    },
+    {
+      "character": "衣服",
+      "pinyin": "yīfu",
+      "palladius": "ифу",
+      "translation": "одежда"
+    },
+    {
+      "character": "钱",
+      "pinyin": "qián",
+      "palladius": "цянь",
+      "translation": "деньги"
+    },
+    {
+      "character": "东西",
+      "pinyin": "dōngxi",
+      "palladius": "дунси",
+      "translation": "вещь"
+    },
+    {
+      "character": "字",
+      "pinyin": "zì",
+      "palladius": "цзы",
+      "translation": "иероглиф"
+    },
+    {
+      "character": "汉语",
+      "pinyin": "hànyǔ",
+      "palladius": "ханьюй",
+      "translation": "китайский язык"
+    }
+  ],
+  "transport_animals": [
+    {
+      "character": "飞机",
+      "pinyin": "fēijī",
+      "palladius": "фэйцзи",
+      "translation": "самолёт"
+    },
+    {
+      "character": "出租车",
+      "pinyin": "chūzūchē",
+      "palladius": "чуцзучэ",
+      "translation": "такси"
+    },
+    {
+      "character": "猫",
+      "pinyin": "māo",
+      "palladius": "мао",
+      "translation": "кошка"
+    },
+    {
+      "character": "狗",
+      "pinyin": "gǒu",
+      "palladius": "гоу",
+      "translation": "собака"
+    },
+    {
+      "character": "天气",
+      "pinyin": "tiānqì",
+      "palladius": "тяньци",
+      "translation": "погода"
+    }
+  ],
+  "common_phrases": [
+    {
+      "character": "谢谢",
+      "pinyin": "xièxie",
+      "palladius": "сесе",
+      "translation": "спасибо"
+    },
+    {
+      "character": "不客气",
+      "pinyin": "búkèqì",
+      "palladius": "букэци",
+      "translation": "пожалуйста"
+    },
+    {
+      "character": "对不起",
+      "pinyin": "duìbùqǐ",
+      "palladius": "дуйбуци",
+      "translation": "извините"
+    },
+    {
+      "character": "没关系",
+      "pinyin": "méiguānxì",
+      "palladius": "мэйгуаньси",
+      "translation": "ничего страшного"
+    },
+    {
+      "character": "再见",
+      "pinyin": "zàijiàn",
+      "palladius": "цзайцзянь",
+      "translation": "до свидания"
+    },
+    {
+      "character": "请",
+      "pinyin": "qǐng",
+      "palladius": "цин",
+      "translation": "пожалуйста"
+    },
+    {
+      "character": "喂",
+      "pinyin": "wèi",
+      "palladius": "вэй",
+      "translation": "алло"
+    },
+    {
+      "character": "打电话",
+      "pinyin": "dǎdiànhuà",
+      "palladius": "дадяньхуа",
+      "translation": "звонить по телефону"
+    }
+  ],
+  "particles_adverbs": [
+    {
+      "character": "的",
+      "pinyin": "de",
+      "palladius": "дэ",
+      "translation": "частица притяжательности"
+    },
+    {
+      "character": "了",
+      "pinyin": "le",
+      "palladius": "лэ",
+      "translation": "частица завершенности"
+    },
+    {
+      "character": "吗",
+      "pinyin": "ma",
+      "palladius": "ма",
+      "translation": "вопросительная частица"
+    },
+    {
+      "character": "呢",
+      "pinyin": "ne",
+      "palladius": "нэ",
+      "translation": "вопросительная частица"
+    },
+    {
+      "character": "不",
+      "pinyin": "bù",
+      "palladius": "бу",
+      "translation": "не"
+    },
+    {
+      "character": "很",
+      "pinyin": "hěn",
+      "palladius": "хэнь",
+      "translation": "очень"
+    },
+    {
+      "character": "太",
+      "pinyin": "tài",
+      "palladius": "тай",
+      "translation": "слишком"
+    },
+    {
+      "character": "都",
+      "pinyin": "dōu",
+      "palladius": "доу",
+      "translation": "все"
+    },
+    {
+      "character": "和",
+      "pinyin": "hé",
+      "palladius": "хэ",
+      "translation": "и"
+    },
+    {
+      "character": "在",
+      "pinyin": "zài",
+      "palladius": "цзай",
+      "translation": "в, на (предлог)"
+    },
+    {
+      "character": "一点儿",
+      "pinyin": "yīdiǎnr",
+      "palladius": "идяньр",
+      "translation": "немного"
+    }
+  ],
+  "measure_words": [
+    {
+      "character": "个",
+      "pinyin": "gè",
+      "palladius": "гэ",
+      "translation": "счётное слово"
+    },
+    {
+      "character": "本",
+      "pinyin": "běn",
+      "palladius": "бэнь",
+      "translation": "счётное слово для книг"
+    },
+    {
+      "character": "些",
+      "pinyin": "xiē",
+      "palladius": "се",
+      "translation": "несколько"
+    },
+    {
+      "character": "块",
+      "pinyin": "kuài",
+      "palladius": "куай",
+      "translation": "кусок, юань"
+    },
+    {
+      "character": "岁",
+      "pinyin": "suì",
+      "palladius": "суй",
+      "translation": "лет (возраст)"
+    }
+  ]
+}

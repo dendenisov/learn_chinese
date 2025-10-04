@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изучение китайских иероглифов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="app-title">汉字学习</h1>
+                    <div class="header-controls">
+                        <button id="searchBtn" class="btn btn--outline btn--sm">
+                            <span>🔍</span> Поиск
+                        </button>
+                        <button id="themeToggle" class="btn btn--outline btn--sm">
+                            <span id="themeIcon">🌙</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Modal -->
+        <div id="searchModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Поиск иероглифов</h3>
+                    <button class="modal-close" id="closeSearch">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Поиск по иероглифу, пиньиню, палладице или переводу...">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Collections View -->
+                <div id="collectionsView" class="view active">
+                    <div class="view-header">
+                        <h2>Коллекции иероглифов</h2>
+                        <button id="addCollectionBtn" class="btn btn--primary">+ Новая коллекция</button>
+                    </div>
+                    <div id="collectionsGrid" class="collections-grid"></div>
+                </div>
+
+                <!-- Collection Details View -->
+                <div id="collectionView" class="view">
+                    <div class="view-header">
+                        <div class="breadcrumb">
+                            <button id="backToCollections" class="btn btn--outline btn--sm">← Назад</button>
+                            <h2 id="collectionTitle">Коллекция</h2>
+                        </div>
+                        <div class="collection-actions">
+                            <button id="studyModeBtn" class="btn btn--primary">📖 Изучение</button>
+                            <button id="quizModeBtn" class="btn btn--secondary">🧠 Тест</button>
+                            <button id="addCardBtn" class="btn btn--outline">+ Карточка</button>
+                        </div>
+                    </div>
+                    <div id="cardsGrid" class="cards-grid"></div>
+                </div>
+
+                <!-- Study Mode View -->
+                <div id="studyView" class="view">
+                    <div class="study-header">
+                        <button id="exitStudy" class="btn btn--outline btn--sm">× Завершить</button>
+                        <div class="study-progress">
+                            <span id="studyCounter">1 / 10</span>
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="study-navigation">
+                            <button id="prevCard" class="btn btn--outline btn--sm">← Пред.</button>
+                            <button id="nextCard" class="btn btn--outline btn--sm">След. →</button>
+                        </div>
+                    </div>
+                    <div class="study-card-container">
+                        <div id="studyCard" class="flashcard">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <div class="character" id="studyCharacter">汉</div>
+                                    <div class="pinyin" id="studyPinyin">hàn</div>
+                                </div>
+                                <div class="flashcard-back">
+                                    <div class="character" id="studyCharacterBack">汉</div>
+                                    <div class="card-details">
+                                        <div class="pinyin" id="studyPinyinBack">hàn</div>
+                                        <div class="palladius" id="studyPalladius">хань</div>
+                                        <div class="translation" id="studyTranslation">китайский</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Mode View -->
+                <div id="quizView" class="view">
+                    <div class="quiz-header">
+                        <button id="exitQuiz" class="btn btn--outline btn--sm">× Завершить</button>
+                        <div class="quiz-progress">
+                            <span id="quizCounter">Вопрос 1 / 10</span>
+                            <div class="quiz-score">
+                                <span>Правильно: <span id="correctAnswers">0</span></span>
+                                <span>Ошибок: <span id="wrongAnswers">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-container">
+                        <div class="quiz-question">
+                            <div class="quiz-character" id="quizCharacter">汉</div>
+                            <p>Выберите правильный перевод:</p>
+                        </div>
+                        <div class="quiz-options" id="quizOptions">
+                            <!-- Options will be generated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Results View -->
+                <div id="quizResultsView" class="view">
+                    <div class="quiz-results">
+                        <h2>Результаты теста</h2>
+                        <div class="results-stats">
+                            <div class="result-item">
+                                <span class="result-label">Правильных ответов:</span>
+                                <span class="result-value" id="finalCorrect">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Неправильных ответов:</span>
+                                <span class="result-value" id="finalWrong">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Точность:</span>
+                                <span class="result-value" id="accuracy">0%</span>
+                            </div>
+                        </div>
+                        <div class="results-actions">
+                            <button id="retakeQuiz" class="btn btn--primary">Пройти ещё раз</button>
+                            <button id="backToCollection" class="btn btn--secondary">К коллекции</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Add Collection Modal -->
+        <div id="addCollectionModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Новая коллекция</h3>
+                    <button class="modal-close" id="closeAddCollection">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label" for="collectionName">Название коллекции</label>
+                        <input type="text" id="collectionName" class="form-control" placeholder="Введите название...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="collectionDescription">Описание (необязательно)</label>
+                        <textarea id="collectionDescription" class="form-control" rows="3" placeholder="Описание коллекции..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveCollection" class="btn btn--primary">Создать</button>
+                    <button id="cancelCollection" class="btn btn--outline">Отмена</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add/Edit Card Modal -->
+        <div id="cardModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="cardModalTitle">Новая карточка</h3>
+                    <button class="modal-close" id="closeCardModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label" for="cardCharacter">Иероглиф *</label>
+                        <input type="text" id="cardCharacter" class="form-control" placeholder="汉">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cardPinyin">Пиньинь *</label>
+                        <input type="text" id="cardPinyin" class="form-control" placeholder="hàn">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cardPalladius">Палладица *</label>
+                        <input type="text" id="cardPalladius" class="form-control" placeholder="хань">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cardTranslation">Перевод *</label>
+                        <input type="text" id="cardTranslation" class="form-control" placeholder="китайский">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveCard" class="btn btn--primary">Сохранить</button>
+                    <button id="deleteCard" class="btn btn--outline" style="display: none;">Удалить</button>
+                    <button id="cancelCard" class="btn btn--outline">Отмена</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirm Delete Modal -->
+        <div id="confirmModal" class="modal hidden">
+            <div class="modal-content modal-content--small">
+                <div class="modal-header">
+                    <h3>Подтверждение</h3>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmMessage">Вы уверены?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmYes" class="btn btn--primary">Да</button>
+                    <button id="confirmNo" class="btn btn--outline">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
